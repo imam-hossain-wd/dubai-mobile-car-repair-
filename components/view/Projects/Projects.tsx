@@ -1,4 +1,4 @@
-// components/sections/Projects.tsx
+
 "use client";
 
 import Link from "next/link";
@@ -10,10 +10,7 @@ import {
   RiCarLine,
   RiMapPinFill,
 } from "@remixicon/react";
-// import { SiteConfig } from "@/config/siteConfig";
 import { Project } from "@/types/project";
-// import ProjectCard from "@/components/shared/Card/ProjectCard";
-// import ProjectModal from "@/components/shared/ProjectModal/ProjectModal";
 import { projectData } from "@/data/projectData";
 import ProjectCard from "@/components/shared/card/ProjectCard";
 import { SiteConfig } from "@/config/siteconfig";
