@@ -1,4 +1,4 @@
-import { ServiceBanner} from "@/utils/assets";
+import { ServiceBanner} from "@/config/imageConfig";
 
 export const carRaditorRepair = {
     title: "Car Radiator Repair Dubai | Engine Overheating & Coolant Leak Fix Near You",

@@ -1,4 +1,4 @@
-import { ServiceBanner} from "@/utils/assets";
+import { ServiceBanner} from "@/config/imageConfig";
 
 export const starterMotorRepair = {
     title: "Car Starter Motor Repair Dubai | Engine Not Starting Fix Near You",

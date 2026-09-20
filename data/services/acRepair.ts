@@ -1,4 +1,4 @@
-import { ServiceBanner} from "@/utils/assets";
+import { ServiceBanner} from "@/config/imageConfig";
 
 export const acRepair = {
     title: "Car AC Repair Dubai | AC Not Cooling Fix & Gas Refill Near You",

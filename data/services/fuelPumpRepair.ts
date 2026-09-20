@@ -1,4 +1,4 @@
-import { ServiceBanner } from "@/utils/assets";
+import { ServiceBanner } from "@/config/imageConfig";
 
 export const fuelPumpRepair = {
     title: "Car Fuel Pump Repair Dubai | Engine Not Starting & Fuel Issue Fix Near You",

@@ -1,4 +1,4 @@
-import { ServiceBanner } from "@/utils/assets";
+import { ServiceBanner } from "@/config/imageConfig";
 
 export const mechanicService = {
   title: "Car Mechanic Service Dubai | Mobile Car Repair & Maintenance",

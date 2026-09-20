@@ -1,4 +1,4 @@
-import { ServiceBanner } from "@/utils/assets";
+import { ServiceBanner } from "@/config/imageConfig";
 
 export const jumpStartService = {
     title: "Car Jump Start Service Dubai | 24/7 Emergency Battery Boost Near You",

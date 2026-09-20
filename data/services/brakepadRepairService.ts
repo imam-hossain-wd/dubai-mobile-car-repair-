@@ -1,4 +1,4 @@
-import { ServiceBanner } from "@/utils/assets";
+import { ServiceBanner } from "@/config/imageConfig";
 
 export const brakepadRepairService = {
     title: "Brake Pad Repair Dubai | Fast Mobile Brake Service Near You",

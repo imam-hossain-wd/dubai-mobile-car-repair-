@@ -1,4 +1,4 @@
-import { ServiceBanner } from "@/utils/assets";
+import { ServiceBanner } from "@/config/imageConfig";
 
 export const windowMotorRepair = {
     title: "Car Window Motor Repair Dubai | Power Window Not Working Fix Near You",
