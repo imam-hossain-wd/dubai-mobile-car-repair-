@@ -4,18 +4,19 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { SiteConfig } from "@/config/siteconfig"
 import Link from "next/link"
+import { heroBanner } from "@/config/imageConfig"
 
 export function Hero() {
   return (
     <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden bg-background">
       {/* Background Pattern */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/5 via-background to-background" />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-primary/5 via-background to-background" />
+        <div className="absolute top-0 right-0 w-150 h-150 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+        <div className="absolute bottom-0 left-0 w-100 h-100 bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className="space-y-8">
@@ -47,7 +48,7 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="group h-14 px-8 text-base font-semibold rounded-xl"
+                className="group flex h-14 px-8 text-base font-semibold rounded-xl"
               >
                 <Link href={SiteConfig.numberCallLink}>
                   <RiPhoneLine className="mr-2 size-5" />
@@ -67,7 +68,7 @@ export function Hero() {
             </div>
 
             {/* Phone Number Display */}
-            <div className="flex items-center gap-4 pt-2">
+            {/* <div className="flex items-center gap-4 pt-2">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <RiPhoneLine className="size-4 text-primary" />
                 <span>Call us directly:</span>
@@ -78,12 +79,12 @@ export function Hero() {
               >
                 {SiteConfig.displayNumber}
               </Link>
-            </div>
+            </div> */}
 
             {/* Trust Indicators */}
             <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border">
               <div className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <div className="shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <RiTimeLine className="size-5 text-primary" />
                 </div>
                 <div>
@@ -92,7 +93,7 @@ export function Hero() {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <div className="shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <RiShieldCheckLine className="size-5 text-primary" />
                 </div>
                 <div>
@@ -101,7 +102,7 @@ export function Hero() {
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <div className="shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <RiToolsLine className="size-5 text-primary" />
                 </div>
                 <div>
@@ -114,10 +115,10 @@ export function Hero() {
 
           {/* Image / Visual */}
           <div className="relative lg:pl-8">
-            <div className="relative aspect-[4/3] lg:aspect-[3/4] rounded-2xl overflow-hidden bg-muted">
+            <div className="relative w-130 h-120 rounded-2xl overflow-hidden bg-muted">
               {/* Replace with your actual image */}
               <Image
-                src="/images/hero-mechanic.webp"
+                src={heroBanner?.hero}
                 alt="Certified mobile car mechanic repairing vehicle in Dubai"
                 fill
                 priority
@@ -126,7 +127,7 @@ export function Hero() {
               />
               
               {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
             </div>
 
             {/* Floating Card - Response Time */}
