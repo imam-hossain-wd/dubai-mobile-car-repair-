@@ -1,5 +1,6 @@
 import { FAQ } from '@/components/view/FAQ/FAQ'
 import { FeaturedServices } from '@/components/view/FeaturedServices/FeaturedServices'
+import FinalCTA from '@/components/view/FinalCTA/FinalCTA'
 import { Hero } from '@/components/view/Hero/Hero'
 import HowItWorks from '@/components/view/HowItWorks/HowItWorks'
 import { Projects } from '@/components/view/Projects/Projects'
@@ -21,6 +22,7 @@ export default function HomePage() {
         <ServiceMap />
         <Reviews />
         <FAQ />
+        <FinalCTA />
     </div>
   )
 }
