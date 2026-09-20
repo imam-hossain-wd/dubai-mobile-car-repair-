@@ -112,7 +112,9 @@ export function Navbar() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between gap-4 lg:h-20">
             {/* ============ Logo ============ */}
-            <Logo />
+            <div className="w-52 h-26 md:w-60 md:h-28 items-center justify-center">
+              <Logo />
+            </div>
 
             {/* ============ Desktop Navigation ============ */}
             <nav className="hidden items-center gap-1 lg:flex">

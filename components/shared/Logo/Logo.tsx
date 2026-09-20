@@ -16,7 +16,7 @@ export default function Logo() {
           width={300}
           height={180}
           alt={SiteConfig.brandName}
-          className=" w-42 h-38 object-contain"
+          className=" w-full h-full object-contain"
         />
       </div>
       {/* <div className="hidden sm:block">
