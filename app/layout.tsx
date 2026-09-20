@@ -4,6 +4,7 @@ import "./globals.css"
 // import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 import Footer from "@/components/shared/Footer/Footer";
+import { Navbar } from "@/components/shared/Navbar/Navbar";
 
 const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-sans'})
 
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body>
         {/* <ThemeProvider>{children}</ThemeProvider> */}
         <main>
+          <Navbar />
           {children}
           <Footer />
         </main>
