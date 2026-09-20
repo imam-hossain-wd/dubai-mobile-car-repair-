@@ -413,4 +413,3 @@ export const whyChooseUs = [
 as a world top classs frontend developer and designer who has more than 15 years experience who build world class ultra modern , professional , responsive, beautiful and efficative website  by using nextjs( app router) , typescript , shadcnui , tailwindcss ,,,, you have to developer a professional world class ultra modern hero section for my website which responsive, professional , efficative , best design ,m eye catching and optimize code,,, dont's add extra garbase code
 
 
-now you have to design a world class ultra modern , very professional , efficative , eye catching , very beautiful why choose us section  for home page,,,,, design must be world class ultra modern,,, and color is primary as well black and white

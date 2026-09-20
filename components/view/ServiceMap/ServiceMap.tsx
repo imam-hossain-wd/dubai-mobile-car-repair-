@@ -20,8 +20,8 @@ import {
   RiCheckboxCircleFill,
 } from "@remixicon/react";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo/autodrop-logo.png";
 import { SiteConfig } from "@/config/siteconfig";
+import { brandLogo } from "@/config/imageConfig";
 
 /* ============ Icon mapping by area name ============ */
 const areaIconMap: Record<string, React.ElementType> = {
@@ -200,7 +200,7 @@ export function ServiceMap() {
                 {/* Logo tile */}
                 <div className="flex size-16 shrink-0 items-center justify-center rounded-xl bg-primary-foreground p-2 shadow-lg">
                   <Image
-                    src={logo}
+                    src={brandLogo?.logo}
                     width={56}
                     height={56}
                     alt={brandName}

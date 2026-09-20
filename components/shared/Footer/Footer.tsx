@@ -16,9 +16,9 @@ import {
   RiWhatsappFill,
   RiArrowUpLine,
 } from "@remixicon/react";
-import logo from "@/assets/logo/autodrop-logo.png";
 import { SiteConfig } from "@/config/siteconfig";
 import { services } from "@/data/services/services";
+import Logo from "../Logo/Logo";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -58,63 +58,8 @@ export default function Footer() {
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         {/* ============ Top: Brand Hero Row ============ */}
         <div className="grid grid-cols-1 gap-8 border-b border-background/10 py-12 lg:grid-cols-12 lg:gap-10 lg:py-16">
-          {/* Left: Logo + Brand + Description */}
-          <div className="lg:col-span-5">
-            <Link href="/" className="inline-block">
-              <div className="relative inline-flex items-center gap-3 rounded-2xl border border-background/10 bg-background/[0.03] p-3 pr-5">
-                <div className="relative flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary">
-                  <Image
-                    src={logo}
-                    width={40}
-                    height={40}
-                    alt={brandName}
-                    className="size-8 rounded object-contain"
-                  />
-                </div>
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-bold leading-tight tracking-tight text-background">
-                    {brandName}
-                  </p>
-                  <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
-                    Mobile Mechanic · {city}
-                  </p>
-                </div>
-              </div>
-            </Link>
-
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-background/60">
-              {description}
-            </p>
-
-            {/* Social icons */}
-            <div className="mt-6 flex flex-wrap items-center gap-2">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                if (!social.href) return null;
-                return (
-                  <Link
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.name}
-                    className="flex size-10 items-center justify-center rounded-xl border border-background/10 bg-background/[0.03] text-background/60 transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
-                  >
-                    <Icon className="size-4" />
-                  </Link>
-                );
-              })}
-              <Link
-                href={SiteConfig.whatsappCallLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="flex size-10 items-center justify-center rounded-xl border border-background/10 bg-background/[0.03] text-background/60 transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
-              >
-                <RiWhatsappFill className="size-4" />
-              </Link>
-            </div>
-          </div>
+     
+     <Logo />
 
           {/* Right: Contact Tiles */}
           <div className="lg:col-span-7">
