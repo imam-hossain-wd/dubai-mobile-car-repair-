@@ -1,196 +1,120 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-// components/shared/Card/ServiceCard.tsx
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { 
-  RiBattery2Line,
-  RiFlashlightLine,
-  RiComputerLine,
-  RiSettings4Line,
-  RiGasStationLine,
-  RiCarLine,
-  RiSnowflakeLine,
-  RiWindowLine,
-  RiDashboardLine,
-  RiToolsLine,
-  RiBankLine,
-  RiBarChart2Line,
-  RiShieldFlashLine,
-  RiOilLine,
+import Image from "next/image";
+import {
+  RiArrowRightUpLine,
   RiArrowRightSLine,
-  RiExchangeLine,
-  RiWrenchLine,
-  RiPianoLine,
   RiCheckLine,
+  RiFlashlightFill,
 } from "@remixicon/react";
 import { cn } from "@/lib/utils";
-
-// Icon mapping
-const iconMap: Record<string, any> = {
-  "Car Battery Replacement": RiBattery2Line,
-  "Jump Start Car": RiFlashlightLine,
-  "Car Computer Diagnostic": RiComputerLine,
-  "Car Alternator Repair": RiSettings4Line,
-  "Car Fuel Pump Repair": RiGasStationLine,
-  "Car Starter Motor Repair": RiCarLine,
-  "Car AC Repair": RiSnowflakeLine,
-  "Car Window Motor Repair": RiWindowLine,
-  "Radiator Replacement": RiDashboardLine,
-  "ABS System Repair": RiBankLine,
-  "Brake Pad Repair": RiBarChart2Line,
-  "Car Detailing Service": RiShieldFlashLine,
-  "Emergency Car Repair": RiFlashlightLine,
-  "Car Mechanic Service": RiToolsLine,
-  "Oil Change Service": RiOilLine,
-  "Car AC Gas Refill Service": RiSnowflakeLine,
-  "Car Transmission Repair": RiExchangeLine,
-  "Car Service Dubai": RiWrenchLine,
-  "Car Repair Dubai": RiPianoLine,
-};
+import { ServiceCardProps } from "@/types/card";
 
 
 
-
-
-export interface ServiceCardProps {
-  name: string;
-  slug: string;
-  features?: string[];
-  className?: string;
-  variant?: "default" | "compact" | "featured";
-  showFeatures?: boolean;
-  showArrow?: boolean;
-  defaultExpanded?: boolean;
-}
-
-export function ServiceCard({ 
-  name, 
-  slug, 
+export function ServiceCard({
+  name,
+  slug,
   features = [],
-  className, 
-  variant = "default",
-  showFeatures = true,
-  showArrow = true,
-  defaultExpanded = false
+  image,
+  intro,
+  className,
+  index = 0,
 }: ServiceCardProps) {
-  
-  const Icon = iconMap[name] || RiToolsLine;
-  
-  
-
-  const cardClasses = cn(
-    "group relative block overflow-hidden border bg-white rounded transition-all duration-300 border-primary shadow-xl shadow-primary/5",
-    {
-      "p-5 md:p-6": variant === "default",
-      "p-3 md:p-4": variant === "compact",
-      "p-6 md:p-8 border-primary/20 bg-primary/5": variant === "featured",
-    },
-    className
-  );
-
-  const iconWrapperSize = {
-    default: "h-14 w-14",
-    compact: "h-10 w-10",
-    featured: "h-16 w-16",
-  };
-
-  const iconInnerSize = {
-    default: "h-6 w-6",
-    compact: "h-4 w-4",
-    featured: "h-7 w-7",
-  };
-
-  const textSize = {
-    default: "text-sm md:text-base",
-    compact: "text-xs md:text-sm",
-    featured: "text-base md:text-lg",
-  };
-
-  const featuresToShow = features.slice(0, 4);
-  const hasMoreFeatures = features.length > 4;
+  const displayFeatures = features.slice(0, 4);
+  const description =
+    intro?.content?.split(".")[0]?.slice(0, 110) + "..." || "";
 
   return (
-    <div className={cardClasses}>
-      {/* Background gradient on hover */}
-      <div className={`absolute inset-0  opacity-100 transition-opacity duration-500  bg-white`} />
-      
-      {/* Glow effect */}
-      {/* <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/10 blur-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" /> */}
-
-      {/* Content */}
-      <div className="relative ">
-        {/* Header with Icon and Name */}
-        <div className="flex items-center gap-4">
-          {/* Icon with ring */}
-          <div className="relative shrink-0">
-            <div className={`absolute inset-0 rounded-full border border-black   blur-sm`} />
-            <div className={cn(
-              "relative flex items-center justify-center rounded-full border-2 border-primary bg-primary backdrop-blur-sm transition-all duration-300  ",
-              iconWrapperSize[variant]
-            )}>
-              <Icon className={cn(iconInnerSize[variant], "transition-transform duration-300 text-black")} />
-            </div>
-          </div>
-          
-          {/* Name and Link */}
-          <div className="flex min-w-0">
-            <Link href={`/services/${slug}`} className="block">
-              <h3 className={cn(
-                "font-semibold leading-tight tracking-tight text-foreground transition-colors hover:text-primary text-md",
-                // textSize[variant]
-              )}>
-                {name}
-              </h3>
-            </Link>
-          </div>
-        </div>
-
-        {/* Features Section */}
-        {showFeatures && features.length > 0 && (
-          <div className="mt-4 space-y-2">
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-medium uppercase tracking-wider text-">
-                Key Features
-              </span>
-              <div className="h-px flex-1 bg-primary" />
-            </div>
-
-            <div className="space-y-1.5">
-              {featuresToShow.map((feature, index) => (
-                <div 
-                  key={index} 
-                  className="flex items-start gap-2 text-xs  transition-colors "
-                >
-                  <RiCheckLine className="mt-0.5 h-3.5 w-3.5 shrink-0 text-black" />
-                  <span>{feature}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+    <article
+      className={cn(
+        "group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-500",
+        "hover:border-primary/60 hover:shadow-2xl hover:shadow-primary/10",
+        "hover:-translate-y-1",
+        className
+      )}
+    >
+      {/* ===== Image Section ===== */}
+      <div className="relative aspect-16/10 w-full overflow-hidden bg-muted">
+        {image ? (
+          <Image
+            src={image}
+            alt={`${name} in Dubai`}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-linear-to-br from-primary/20 via-primary/5 to-background" />
         )}
 
-        {/* Bottom CTA */}
-        <div className="mt-4 pt-3 border-t border-primary/5">
-          <Link
-            href={`/services/${slug}`}
-            className="inline-flex w-full items-center justify-center gap-2 rounded border border-primary/20 bg-primary px-4 py-2 text-xs font-medium text-black transition-all hover:bg-primary/10 hover:border-primary/30"
-          >
-            <span>Get This Service</span>
-            <RiArrowRightSLine className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
+
+        {/* Live Badge */}
+        <div className="absolute right-4 top-4 flex items-center gap-1.5 rounded-full border border-white/20 bg-black/40 px-3 py-1.5 backdrop-blur-md">
+          <RiFlashlightFill className="size-3 text-primary" />
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-white">
+            Same Day
+          </span>
         </div>
 
+        {/* Title on image */}
+        <div className="absolute inset-x-0 bottom-0 p-5">
+          <h3 className="text-lg font-bold leading-tight text-white drop-shadow-lg sm:text-xl">
+            {name}
+          </h3>
+        </div>
       </div>
 
-      {/* Corner accents */}
-      {/* <div className="absolute right-0 top-0 h-6 w-6 border-r-2 border-t-2 transition-all duration-300 border-primary/20" />
-      <div className="absolute bottom-0 left-0 h-6 w-6 border-b-2 border-l-2 transition-all duration-300 border-primary/20" /> */}
-      
-      {/* Subtle shimmer on hover */}
-      {/* <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" /> */}
-    </div>
+      {/* ===== Content Section ===== */}
+      <div className="flex flex-1 flex-col p-5">
+        {/* Features */}
+        {displayFeatures.length > 0 && (
+          <ul className="mb-5 space-y-2">
+            {displayFeatures.map((feature, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-2.5 text-sm text-foreground/80"
+              >
+                <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-primary/15">
+                  <RiCheckLine className="size-3 text-primary" />
+                </span>
+                <span className="line-clamp-1 text-xs">{feature}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {/* Spacer */}
+        <div className="flex-1" />
+
+        {/* CTA Row */}
+        <div className="flex items-center justify-between border-t border-border pt-4">
+          <Link
+            href={`/services/${slug}`}
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary"
+          >
+            Learn More
+            <RiArrowRightSLine className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+
+          <Link
+            href={`/services/${slug}`}
+            aria-label={`Book ${name}`}
+            className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/30"
+          >
+            <RiArrowRightUpLine className="size-4" />
+          </Link>
+        </div>
+      </div>
+
+      {/* Decorative corner accent */}
+      <div className="pointer-events-none absolute right-0 top-0 h-16 w-16 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+        <div className="absolute right-0 top-0 h-px w-8 bg-primary" />
+        <div className="absolute right-0 top-0 h-8 w-px bg-primary" />
+      </div>
+    </article>
   );
 }

@@ -1,7 +1,8 @@
 import {
-  RiCarWashingLine, 
+  RiCellphoneLine,
+  RiCarWashingLine,
   RiSettings3Line,
-  RiCellphoneLine
+  RiArrowRightLine,
 } from "@remixicon/react";
 
 const steps = [
@@ -10,103 +11,169 @@ const steps = [
     stepNumber: "01",
     icon: RiCellphoneLine,
     title: "Call or Book Online",
-    description: "Reach us 24/7 via phone, WhatsApp, or our website. Tell us your issue and location.",
+    description:
+      "Reach us 24/7 via phone, WhatsApp, or our website. Tell us your issue and location.",
+    meta: "24/7 Available",
   },
   {
     id: 2,
     stepNumber: "02",
     icon: RiCarWashingLine,
     title: "We Come to You",
-    description: "Our mobile unit arrives at your spot within 5-15 minutes, fully equipped to fix your car.",
+    description:
+      "Our mobile unit arrives at your spot within 5-15 minutes, fully equipped to fix your car.",
+    meta: "5–15 Min Arrival",
   },
   {
     id: 3,
     stepNumber: "03",
     icon: RiSettings3Line,
     title: "Fix On-Site",
-    description: "Certified mechanics diagnose and repair your vehicle right there—no towing, no waiting.",
+    description:
+      "Certified mechanics diagnose and repair your vehicle right there—no towing, no waiting.",
+    meta: "90% Onsite Fix Rate",
   },
-
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="relative py-8 overflow-hidden bg-background">
+    <section className="relative overflow-hidden bg-background py-10">
+      {/* Background Decorative Layer */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute left-1/2 top-0 h-100 w-200 -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,oklch(0.922_0_0/0.35)_1px,transparent_1px),linear-gradient(to_bottom,oklch(0.922_0_0/0.35)_1px,transparent_1px)] bg-size-[56px_56px] mask-[radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
+      </div>
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mx-auto max-w-3xl text-center mb-10">
-          <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-semibold tracking-wide mb-4">
-            Simple Process
-          </span>
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl font-serif">
-            How It Works
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* ============ Section Header ============ */}
+        <div className="mx-auto mb-14 max-w-3xl text-center lg:mb-20">
+          {/* Eyebrow */}
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1.5">
+            <span className="size-1.5 rounded-full bg-primary" />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-primary">
+              Simple Process
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h2 className="text-3xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            Repairs in{" "}
+            <span className="text-primary">Three Simple Steps</span>
           </h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg leading-relaxed">
-            Your car repair journey in four simple steps. Fast, transparent, and without the workshop hassle.
+
+          {/* Subtitle */}
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Your car repair journey made effortless. Fast, transparent, and
+            without the workshop hassle.
           </p>
         </div>
 
-        {/* Steps Grid */}
-        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4">
+        {/* ============ Steps Grid ============ */}
+        <div className="relative grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+          {/* Desktop Connector — dashed line through icon centers */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-0 right-0 top-22 hidden md:block"
+          >
+            <div className="mx-auto h-px w-[calc(100%-16rem)] bg-[repeating-linear-gradient(to_right,var(--border)_0_6px,transparent_6px_12px)]" />
+          </div>
 
-          {/* Desktop Connector Line (Hidden on mobile/tablet) */}
-          <div className="hidden lg:block absolute top-16 left-0 w-full h-0.5 bg-linear-to-r from-transparent via-border to-transparent z-0" />
-
-          {steps.map((step) => {
+          {steps.map((step, idx) => {
             const Icon = step.icon;
+            const isLast = idx === steps.length - 1;
+
             return (
-              <div
+              <article
                 key={step.id}
-                className="group relative flex flex-col items-center text-center p-6 border  bg-white "
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card"
               >
-                <span className="absolute top-4 right-4 text-7xl font-black text-primary/30  transition-colors duration-500 select-none pointer-events-none">
+                {/* Top gradient accent bar */}
+                <div className="h-1 w-full bg-linear-to-r from-primary/40 via-primary to-primary/40" />
+
+                {/* Giant background number */}
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -right-2 -top-4 select-none text-[8rem] font-black leading-none text-primary/6 sm:text-[10rem]"
+                >
                   {step.stepNumber}
                 </span>
 
-                {/* Icon Container */}
-                <div className={`relative z-10 flex h-18 w-18 rounded-full items-center justify-center bg-primary`}>
-                  <Icon className={`h-9 w-9 text-white`} />
+                {/* Corner accent */}
+                <div className="pointer-events-none absolute right-0 top-1 size-12">
+                  <div className="absolute right-0 top-0 h-px w-6 bg-primary/40" />
+                  <div className="absolute right-0 top-0 h-6 w-px bg-primary/40" />
                 </div>
 
-                {/* Content */}
-                <div className="relative z-10 space-y-3 mt-4">
-                  {/* 3. Step Number Text Label */}
-                  <span className="flex text-white justify-center items-center mx-auto w-24 h-5 rounded-full bg-primary text-[11px] font-bold tracking-widest uppercase">
-                    Step {step.stepNumber}
-                  </span>
-                  <h3 className="text-lg font-semibold transition-colors duration-300">
+                <div className="relative flex flex-1 flex-col p-6 sm:p-7">
+                  {/* Icon + Step Label Row */}
+                  <div className="flex items-center gap-4">
+                    {/* Icon */}
+                    <div className="relative shrink-0">
+                      <div className="absolute inset-0 rounded-2xl bg-primary/20 blur-md" />
+                      <div className="relative flex size-14 items-center justify-center rounded-2xl bg-primary shadow-lg shadow-primary/25">
+                        <Icon className="size-6 text-primary-foreground" />
+                      </div>
+                    </div>
+
+                    {/* Step label */}
+                    <div className="flex flex-col">
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
+                        Step
+                      </span>
+                      <span className="text-lg font-bold leading-none text-foreground">
+                        {step.stepNumber}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="mt-6 text-lg font-bold leading-tight tracking-tight text-foreground sm:text-xl">
                     {step.title}
                   </h3>
-                  <p className="text-xs  leading-relaxed px-2">
+
+                  {/* Description */}
+                  <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {step.description}
                   </p>
-                </div>
 
-                {/* Bottom accent line animation on hover */}
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 bg-primary rounded-t-full w-2/3 transition-all duration-500" />
-              </div>
+                  {/* Meta footer */}
+                  <div className="mt-6 flex items-center justify-between border-t border-border pt-4">
+                    <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider text-primary">
+                      <span className="size-1.5 rounded-full bg-primary" />
+                      {step.meta}
+                    </span>
+
+                    {!isLast && (
+                      <span className="hidden items-center text-muted-foreground md:inline-flex">
+                        <RiArrowRightLine className="size-4" />
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </article>
             );
           })}
         </div>
 
-        {/* Bottom CTA */}
-        {/* <div className="mt-16 text-center">
-          <a
-            href="/contact"
-            className="group inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
-          >
-            Get Started Now
-            <svg
-              className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div> */}
+        {/* ============ Bottom Trust Strip ============ */}
+        <div className="mt-12 lg:mt-16">
+          <div className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-center text-xs text-muted-foreground sm:text-sm">
+            <span className="inline-flex items-center gap-2">
+              <span className="size-1.5 rounded-full bg-primary" />
+              No towing required
+            </span>
+            <span className="hidden h-4 w-px bg-border sm:block" />
+            <span className="inline-flex items-center gap-2">
+              <span className="size-1.5 rounded-full bg-primary" />
+              Transparent upfront pricing
+            </span>
+            <span className="hidden h-4 w-px bg-border sm:block" />
+            <span className="inline-flex items-center gap-2">
+              <span className="size-1.5 rounded-full bg-primary" />
+              Workmanship guaranteed
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );
