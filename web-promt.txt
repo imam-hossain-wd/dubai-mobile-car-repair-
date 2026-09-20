@@ -1,0 +1,413 @@
+i want to develop a website using nextjs-typescript- shadcnui- tailwindcss... below i provide my website packze.json , component.json , global.css file and layout.tsx........
+
+
+&#x20;packze.json file : -&#x20;
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+{
+&#x20; "name": "dubai-mobile-car-repair",
+&#x20; "version": "0.0.1",
+&#x20; "type": "module",
+&#x20; "private": true,
+&#x20; "scripts": {
+&#x20;   "dev": "next dev",
+&#x20;   "build": "next build",
+&#x20;   "start": "next start",
+&#x20;   "lint": "eslint",
+&#x20;   "format": "prettier --write \\"\*\*/\*.{ts,tsx}\\"",
+&#x20;   "typecheck": "tsc --noEmit"
+&#x20; },
+&#x20; "dependencies": {
+&#x20;   "@base-ui/react": "^1.8.0",
+&#x20;   "@remixicon/react": "^4.9.0",
+&#x20;   "class-variance-authority": "^0.7.1",
+&#x20;   "cn": "^0.3.0",
+&#x20;   "next": "16.3.4",
+&#x20;   "next-themes": "^0.4.6",
+&#x20;   "react": "19.2.8",
+&#x20;   "react-dom": "19.2.8",
+&#x20;   "shadcn": "^4.21.0",
+&#x20;   "tw-animate-css": "^1.4.0"
+&#x20; },
+&#x20; "devDependencies": {
+&#x20;   "@tailwindcss/postcss": "^4",
+&#x20;   "@types/node": "^20",
+&#x20;   "@types/react": "^19",
+&#x20;   "@types/react-dom": "^19",
+&#x20;   "eslint": "^10",
+&#x20;   "eslint-config-next": "16.3.4",
+&#x20;   "prettier": "^3.9.6",
+&#x20;   "prettier-plugin-tailwindcss": "^0.8.1",
+&#x20;   "tailwindcss": "^4",
+&#x20;   "typescript": "^5"
+&#x20; }
+}
+
+\---------------------------------------
+this is component.json file : -&#x20;
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "base-lyra",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "iconLibrary": "remixicon",
+  "rtl": false,
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "menuColor": "default",
+  "menuAccent": "subtle",
+  "registries": {}
+}
+\----------------------------------------------
+this is global.css file : -&#x20;
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: var(--font-sans);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklab(53.891% -0.0285 -0.25415);
+  --primary-foreground: oklch(0.969 0.016 293.756);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklab(61.306000000000004% -0.01213 -0.15747);
+  --chart-2: oklab(57.083% -0.02065 -0.20742);
+  --chart-3: oklch(50.964% 0.18528 264.503);
+  --chart-4: oklab(50.32299999999999% -0.02581 -0.22835);
+  --chart-5: oklab(53.891% -0.0285 -0.25415);
+  --radius: 0;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklab(53.891% -0.0285 -0.25415);
+  --sidebar-primary-foreground: oklch(0.969 0.016 293.756);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklab(53.891% -0.0285 -0.25415);
+  --primary-foreground: oklch(0.969 0.016 293.756);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklab(61.306000000000004% -0.01213 -0.15747);
+  --chart-2: oklab(57.083% -0.02065 -0.20742);
+  --chart-3: oklch(50.964% 0.18528 264.503);
+  --chart-4: oklab(50.32299999999999% -0.02581 -0.22835);
+  --chart-5: oklab(53.891% -0.0285 -0.25415);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --chart-3: oklch(50.964% 0.18528 264.503);
+  --sidebar-primary-foreground: oklch(0.969 0.016 293.756);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  html {
+    @apply font-sans;
+    }
+}
+
+\------------------------------------------------
+import { Geist, Geist_Mono, Noto_Sans } from "next/font/google"
+
+import "./globals.css"
+// import { ThemeProvider } from "@/components/theme-provider"
+import { cn } from "@/lib/utils";
+
+const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-sans'})
+
+const fontMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+})
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn("antialiased", fontMono.variable, "font-sans", notoSans.variable)}
+    >
+      <body>
+        {/* <ThemeProvider>{children}</ThemeProvider> */}
+        <main>
+          {children}
+        </main>
+      </body>
+    </html>
+  )
+}
+
+\-----------------------------------
+this is my website site config file : - 
+__________________________________________
+import { RiFacebookCircleFill, RiInstagramFill, RiMailLine, RiMapPinLine, RiPhoneLine, RiPinterestFill, RiTwitterXFill, RiYoutubeFill } from "@remixicon/react";
+
+export const SiteConfig = {
+    authorName: "Md Zahid",
+    brandName: "Dubai Mobile Car Repair Mechanic",
+    url: "https://www.dubaimobilecarrepair.com",
+    email: "dubaicarrepair@gmail.com",
+    description: "Dubai Mobile Car Repair Mechanic delivers 24/7 doorstep car repair across Dubai. Certified mechanics, transparent pricing, and a 5–15 minute response time wherever your car breaks down, we come to you.",
+    displayNumber: "+971 50 941 1265",
+    ogImage:"/ogImage.png",
+    foundedYear:"2020",
+    phoneNumber: "+971509411265",
+    numberCallLink: "tel:+971509411265",
+    whatsappCallLink: "https://wa.me/971509411265",
+    location: "Al Jadaf",
+    streetAddress: "Barajeel Residencey , Al Khail Rd",
+    city: "Dubai",
+    country: "UAE",
+    founded: 2020,
+    responseTime: "5-30 min",
+    GMB: {
+        PlaceID: "",
+        CID: "",
+        BusinessProfileID: "",
+        mapsLink: "https://maps.app.goo.gl/dLsaugzb6CU8uTXe6",
+        embedMap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.9458923209845!2d55.33330470722492!3d25.221941412945103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d58ea319037%3A0x3d42d7e708650cd0!2sMandi%20Man!5e0!3m2!1sen!2sbd!4v1789829861878!5m2!1sen!2sbd",
+        latitude: "25.2219414",
+        longitude: "55.3333047",
+    },
+    serviceAreas: [
+        {
+            "name": "Dubailand",
+            "slug": "dubailand"
+        },
+        {
+            "name": "Arabian Ranches",
+            "slug": "arabian-ranches"
+        },
+        {
+            "name": "Dubai Silicon Oasis",
+            "slug": "dubai-silicon-oasis"
+        },
+        {
+            "name": "Dubai Motor City",
+            "slug": "dubai-motor-city"
+        },
+        {
+            "name": "Jumeirah Village Circle",
+            "slug": "jumeirah-village-circle"
+        },
+        {
+            "name": "Dubai Hills Estate",
+            "slug": "dubai-hills-estate"
+        },
+        {
+            "name": "Business Bay",
+            "slug": "business-bay"
+        },
+        {
+            "name": "Al Barsha",
+            "slug": "al-barsha"
+        },
+        {
+            "name": "Al Quoz",
+            "slug": "al-quoz"
+        },
+        {
+            "name": "Downtown Dubai",
+            "slug": "downtown-dubai"
+        }
+    ],
+
+    operatingHours: [
+        { day: "Saturday", hours: "24 Hours" },
+        { day: "Sunday", hours: "24 Hours" },
+        { day: "Monday", hours: "24 Hours" },
+        { day: "Tuesday", hours: "24 Hours" },
+        { day: "Wednesday", hours: "24 Hours" },
+        { day: "Thursday", hours: "24 Hours" },
+        { day: "Friday", hours: "24 Hours" },
+    ],
+
+    navItems: [
+        { name: "Home", href: "/" },
+        { name: "Services", href: "/services" },
+        { name: "Areas We Serve", href: "/area-we-serve" },
+        { name: "About", href: "/about" },
+        { name: "Contact", href: "/contact" },
+    ],
+
+    footerhrefs: [
+        { title: "About Us", href: "/about" },
+        { title: "Contact", href: "/contact" },
+        { title: "Services", href: "/services" },
+        { title: "Privacy Policy", href: "/privacy" },
+        { title: "Terms of Service", href: "/terms" },
+        { title: "Sitemap", href: "/sitemap.xml" }
+    ],
+
+    socialLinks: [
+        { name: "Facebook", icon: RiFacebookCircleFill, href: "https://www.facebook.com" },
+        { name: "Instagram", icon: RiInstagramFill, href: "https://www.instagram.com" },
+        { name: "Pinterest", icon: RiPinterestFill, href: "https://www.pinterest.com" },
+        { name: "YouTube", icon: RiYoutubeFill, href: "https://www.youtube.com" },
+        { name: "Twitter", icon: RiTwitterXFill, href: "https://x.com" },
+    ],
+
+    contactLinks: [
+        { name: "Map", icon: RiMapPinLine, href: "" },
+        { name: "Phone", icon: RiPhoneLine, href: "tel:+971509411265" },
+        { name: "Email", icon: RiMailLine, href: "mailto:dubaicarrepair@gmail.com" }
+    ]
+};
+
+export const {
+    contactLinks,
+    socialLinks,
+    footerhrefs,
+    navItems,
+    serviceAreas,
+    location,
+    streetAddress,
+    GMB,
+    numberCallLink,
+    whatsappCallLink,
+    operatingHours,
+    displayNumber,
+    description,
+    email,
+    url,
+    brandName,
+    authorName,
+    city,
+    country
+} = SiteConfig;
+-------------------------------------------
+this is business info : - 
+---------------------------------
+
+export const aboutUs = {
+    para1: "Founded in 2020, Dubai Car Repair Mechanic was built to solve a problem every Dubai driver knows well: the time, expense, and stress of traditional auto workshops. As a top-rated, 24/7 mobile car repair service, we operate as a fully equipped garage on wheels, sending certified mechanics directly to your exact location—whether you're stranded on the highway, parked at the office, or waiting at home.",
+    para2: "From battery replacements and jump-starts to advanced computer diagnostics, AC gas refills, and complex mechanical repairs, our technicians deliver complete auto care right where your car is parked. Headquartered in Barajeel Residencey , Al Khail Rd, Al Jadaf and serving every major district—including Dubailand, Business Bay, Downtown Dubai, Al Quoz, and Jumeirah Village Circle—we guarantee a rapid 5 to 30 minutes response time across Dubai. With advanced diagnostic equipment, transparent upfront pricing, and workmanship you can rely on, we make professional car repair convenient without cutting corners on quality."
+}
+
+
+export const whyChooseUs = [
+    {
+        name: "Ultra-Fast 5–30 Minute Onsite Arrival:",
+        description: "Our mobile service units are strategically deployed across major Dubai corridors, ensuring the fastest emergency response time in the region."
+
+    },
+    {
+        name: "Complete Onsite Diagnostic & Repair Capabilities:",
+        description: "Equipped with dealer-grade computer scanners and specialized tools, our certified technicians resolve up to 90% of vehicle issues directly on the spot—eliminating the need for expensive recovery towing."
+    },
+    {
+        name: "100% Transparent, Upfront Pricing:",
+        description: "We provide clear, itemized quotes before any work begins. You get honest pricing with zero hidden charges or surprise call-out fees."
+    },
+    {
+        name: "24/7/365 Emergency Roadside Assistance:",
+        description: "Car breakdowns do not follow business hours. Our team operates round-the-clock across all Dubai residential and commercial districts, including weekends and public holidays."
+    },
+    {
+        name: "Certified Technicians & Guaranteed Work:",
+        description: "Every repair is handled by trained, multi-brand auto mechanics using premium, OEM-grade parts backed by service guarantees for long-term reliability."
+    },
+]
+
+
+as a world top classs frontend developer and designer who has more than 15 years experience who build world class ultra modern , professional , responsive, beautiful and efficative website  by using nextjs( app router) , typescript , shadcnui , tailwindcss ,,,, you have to developer a professional world class ultra modern hero section for my website which responsive, professional , efficative , best design ,m eye catching and optimize code,,, dont's add extra garbase code
