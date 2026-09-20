@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Noto_Sans } from "next/font/google"
 import "./globals.css"
 // import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
+import Footer from "@/components/shared/Footer/Footer";
 
 const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-sans'})
 
@@ -26,6 +27,7 @@ export default function RootLayout({
         {/* <ThemeProvider>{children}</ThemeProvider> */}
         <main>
           {children}
+          <Footer />
         </main>
       </body>
     </html>
