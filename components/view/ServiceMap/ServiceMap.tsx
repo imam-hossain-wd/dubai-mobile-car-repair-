@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -198,7 +198,7 @@ export function ServiceMap() {
 
               <div className="relative flex items-start gap-4">
                 {/* Logo tile */}
-                <div className="flex size-16 shrink-0 items-center justify-center rounded-xl bg-primary-foreground p-2 shadow-lg">
+                {/* <div className="flex size-16 shrink-0 items-center justify-center rounded-xl bg-primary-foreground p-2 shadow-lg">
                   <Image
                     src={brandLogo?.logo}
                     width={56}
@@ -206,7 +206,7 @@ export function ServiceMap() {
                     alt={brandName}
                     className="size-full rounded-md object-contain"
                   />
-                </div>
+                </div> */}
 
                 {/* Info */}
                 <div className="min-w-0 flex-1">
