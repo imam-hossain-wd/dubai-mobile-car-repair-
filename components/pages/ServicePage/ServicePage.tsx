@@ -181,15 +181,13 @@ export default function ServicePage() {
 
             {/* Headline */}
             <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-background sm:text-5xl lg:text-6xl">
-              Complete Mobile Car Repair{" "}
-              <span className="text-primary">At Your Doorstep</span>
+             Mobile Car Repair & On-Site Mechanical Services in Dubai
+              {/* <span className="text-primary">At Your Doorstep</span> */}
             </h1>
 
             {/* Subtitle */}
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-background/60 sm:text-lg">
-              From emergency breakdowns to routine maintenance — {services.length}+
-              certified services delivered to your location across {city} in{" "}
-              {responseTime}.
+              Complete automotive repair and preventive maintenance delivered wherever your car is parked. Professional technicians, diagnostic equipment, and genuine parts dispatched 24/7.
             </p>
 
             {/* Trust chips */}

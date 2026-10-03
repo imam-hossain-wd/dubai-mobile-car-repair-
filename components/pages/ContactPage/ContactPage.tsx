@@ -136,15 +136,15 @@ export default function ContactPage() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-background sm:text-5xl lg:text-6xl">
-              Let&apos;s Get Your Car{" "}
-              <span className="text-primary">Back on the Road</span>
+            <h1 className="text-3xl font-bold leading-[1.05] tracking-tight text-background md:text-4xl lg:text-5xl">
+              {/* Let&apos;s Get Your Car{" "}
+              <span className="text-primary">Back on the Road</span> */}
+              Contact Our <span className="text-primary">24/7 Mobile Auto Repair Dispatch Team</span>
             </h1>
 
             {/* Subtitle */}
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-background/60 sm:text-lg">
-              Call, WhatsApp, or fill in the form below. Certified mechanics
-              dispatched to your location in {responseTime} — anywhere in {city}.
+              Stranded or scheduling maintenance? Reach out immediately by phone, WhatsApp, or contact form for rapid mobile mechanic dispatch across Dubai.
             </p>
 
             {/* Trust chips row */}

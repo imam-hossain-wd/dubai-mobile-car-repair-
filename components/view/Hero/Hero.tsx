@@ -79,20 +79,22 @@ export function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight text-background sm:text-5xl lg:text-6xl">
-              Car Breakdown?{" "}
+            <h1 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight text-background sm:text-5xl lg:text-5xl">
+              {/* Car Breakdown?{" "}
               <span className="text-primary">We Come To You</span>
               <br className="hidden sm:block" />
               <span className="text-background/90">
                 {" "}in {responseTime}
-              </span>
+              </span> */}
+
+              {/* 24/7 <span className="text-primary">Mobile Mechanic</span> & <span className="text-primary">On-Site Car Repair Battery </span> Service  in Dubai */}
+
+                      24/7 <span className="text-primary">Car Battery</span> & <span className="text-primary">Fast Car Repair Mobile Mechanic </span> Service  in Dubai
             </h1>
 
             {/* Description */}
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-background/60 md:text-base">
-              Dubai&apos;s most trusted mobile car repair service. Certified
-              mechanics, transparent pricing, and complete onsite repairs 
-              wherever your car is parked.
+              Fast, reliable roadside assistance and doorstep car repairs delivered directly to your location. Based in Al Jadaf, our certified technicians arrive in 5–30 minutes anywhere across Dubai.
             </p>
 
             {/* Trust points */}

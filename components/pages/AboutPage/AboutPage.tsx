@@ -154,16 +154,14 @@ export default function AboutPage() {
 
               {/* Headline */}
               <h1 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight text-background sm:text-5xl lg:text-6xl">
-                Dubai&apos;s Most Trusted{" "}
-                <span className="text-primary">Mobile Car Repair</span> Team
+                {/* Dubai&apos;s Most Trusted{" "}
+                <span className="text-primary">Mobile Car Repair</span> Team */}
+                About Car Battery Fixing and Mechanical Service
               </h1>
 
               {/* Subtitle */}
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-background/60 sm:text-lg">
-                We built {brandName} to solve a problem every Dubai driver
-                knows well — the time, expense, and stress of traditional auto
-                workshops. As a fully-equipped mobile garage on wheels, we
-                bring certified mechanics directly to your location.
+               Dubai’s trusted 24/7 mobile mechanic service, providing transparent, on-site automotive solutions delivered directly to your location since 2020.
               </p>
 
               {/* Trust points */}
