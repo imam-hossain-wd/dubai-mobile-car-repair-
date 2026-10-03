@@ -410,6 +410,10 @@ export const whyChooseUs = [
 ]
 
 
+
+as a world top class frontend developer and designer who has more than 20 years experience and very expert in world class ultra modern website design using nextjs , shadcnui and tailwincdss which is highly professional , responsive , efficative and very beautiful and eye catching,,, you have to design a professional world class ultra modern design , responsive and beautful and efficative service page for this car repair website,,, a short and professional hero section and services and more
+
+
 as a world top classs frontend developer and designer who has more than 15 years experience who build world class ultra modern , professional , responsive, beautiful and efficative website  by using nextjs( app router) , typescript , shadcnui , tailwindcss ,,,, you have to developer a professional world class ultra modern hero section for my website which responsive, professional , efficative , best design ,m eye catching and optimize code,,, dont's add extra garbase code
 
 
