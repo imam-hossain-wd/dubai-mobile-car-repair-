@@ -2,10 +2,10 @@ import { RiFacebookCircleFill, RiInstagramFill, RiMailLine, RiMapPinLine, RiPhon
 
 export const SiteConfig = {
     authorName: "Md Zahid",
-    brandName: "Dubai Mobile Car Repair Mechanic",
-    url: "https://www.dubaimobilecarrepair.com",
+    brandName: "Car Battery Fixing and Mechanical Service",
+    url: "https://www.carbatteryautomechanic.com ",
     email: "dubaicarrepair@gmail.com",
-    description: "Dubai Mobile Car Repair Mechanic delivers 24/7 doorstep car repair across Dubai. Certified mechanics, transparent pricing, and a 5–15 minute response time wherever your car breaks down, we come to you.",
+    description: "Car Battery Fixing And Auto Mechanical Service Dubai delivers 24/7 doorstep car repair and maintenance service across Dubai. Certified mechanics, transparent pricing, and a 5–30 minutes response time wherever your car breaks down, we come to you.",
     displayNumber: "+971 50 941 1265",
     ogImage:"/ogImage.png",
     foundedYear:"2020",
@@ -22,10 +22,10 @@ export const SiteConfig = {
         PlaceID: "",
         CID: "",
         BusinessProfileID: "",
-        mapsLink: "https://maps.app.goo.gl/dLsaugzb6CU8uTXe6",
-        embedMap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.9458923209845!2d55.33330470722492!3d25.221941412945103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d58ea319037%3A0x3d42d7e708650cd0!2sMandi%20Man!5e0!3m2!1sen!2sbd!4v1789829861878!5m2!1sen!2sbd",
-        latitude: "25.2219414",
-        longitude: "55.3333047",
+        mapsLink: "https://maps.app.goo.gl/XZVDKLo5PgcGycLBA",
+        embedMap: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3083.0610975813493!2d55.33150367466212!3d25.22218927769481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43baa9f19389%3A0xef5d58b9c8680761!2sCar%20battery%20fixing%20and%20mechanical%20service!5e1!3m2!1sen!2sbd!4v1791023013183!5m2!1sen!2sbd",
+        latitude: "25.2233498",
+        longitude: "55.3311328",
     },
     serviceAreas: [
         {

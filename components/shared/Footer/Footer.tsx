@@ -4,7 +4,6 @@ import {
   RiMapPinFill,
   RiPhoneFill,
   RiMailFill,
-  RiArrowRightLine,
   RiShieldCheckFill,
   RiTimeFill,
   RiStarFill,
@@ -61,16 +60,14 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-4">
             {/* Logo */}
             {/* <Link href="/" aria-label={brandName} className="inline-block"> */}
-              <div className="w-56">
+              <div className="flex justify-center -mt-15 -mb-10 ml-6 md:ml-12  w-60 h-auto">
                 <Logo />
               </div>
             {/* </Link> */}
 
             {/* Description */}
             <p className="max-w-sm text-sm leading-relaxed text-neutral-600">
-              Dubai&apos;s most trusted 24/7 mobile car repair service —
-              certified mechanics, dealer-grade tools, and transparent pricing
-              delivered to your doorstep.
+              {SiteConfig.description}
             </p>
 
             {/* Contact info — compact vertical list */}
@@ -252,26 +249,7 @@ export default function Footer() {
               label="Top Rated"
             />
           </div>
-
-          {/* Back to top */}
-          <Link
-            href="#top"
-            aria-label="Back to top"
-            className="group inline-flex items-center gap-2 rounded-xl border border-neutral-200 bg-white px-4 py-2.5 text-xs font-semibold text-neutral-600 transition-colors hover:border-primary/40 hover:text-primary"
-          >
-            Back to Top
-            <RiArrowUpLine className="size-3.5 transition-transform group-hover:-translate-y-0.5" />
-          </Link>
         </div>
-      </div>
-
-      {/* ============================================================
-          Giant Brand Watermark
-      ============================================================ */}
-      <div className="pointer-events-none relative select-none overflow-hidden border-t border-neutral-100">
-        <p className="translate-y-[30%] whitespace-nowrap text-center text-[clamp(3rem,14vw,10rem)] font-black leading-none tracking-tighter text-neutral-900/[0.04]">
-          {brandName}
-        </p>
       </div>
     </footer>
   );

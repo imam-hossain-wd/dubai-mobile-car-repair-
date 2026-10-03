@@ -49,7 +49,7 @@ const generateFAQSchema = () => ({
 export function FAQ() {
   const { city, responseTime, serviceAreas } = SiteConfig;
   const [activeCategory, setActiveCategory] = useState<string>("all");
-  const [openItem, setOpenItem] = useState<string>("faq-1");
+  const [openItems, setOpenItems] = useState<string[]>(["faq-1"]);
 
   /* Filter FAQs by category */
   const filteredFAQs = useMemo(() => {
@@ -160,11 +160,11 @@ export function FAQ() {
               </div>
 
               <div className="p-2 sm:p-3">
-                <Accordion
-                  value={openItem}
-                  onValueChange={setOpenItem}
-                  className="space-y-1.5"
-                >
+           <Accordion
+  value={openItems}
+  onValueChange={setOpenItems}
+  className="space-y-1.5"
+>
                   {filteredFAQs.slice(0,10).map((faq, index) => (
                     <AccordionItem
                       key={faq.id}
